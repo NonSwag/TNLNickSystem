@@ -80,9 +80,9 @@ public class NickCommand extends TNLCommand {
         String[] args = invocation.arguments();
         if (args.length <= 1) {
             suggestions.add("reset");
-            for (TNLPlayer all : TNLListener.getInstance().getOnlinePlayers()) suggestions.add(all.getName());
+            for (TNLPlayer all : TNLListener.getOnlinePlayers()) suggestions.add(all.getName());
         } else if (args[0].equalsIgnoreCase("reset")) {
-            for (TNLPlayer all : TNLListener.getInstance().getOnlinePlayers()) suggestions.add(all.getName());
+            for (TNLPlayer all : TNLListener.getOnlinePlayers()) suggestions.add(all.getName());
         }
         return suggestions;
     }
