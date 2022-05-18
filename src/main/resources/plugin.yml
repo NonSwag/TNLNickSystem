@@ -1,6 +1,6 @@
 name: "TNLNickSystem"
 main: "net.nonswag.tnl.nick.NickSystem"
-version: "1.0"
+version: "1.1"
 api-version: "1.13"
 website: "https://www.thenextlvl.net/"
 depend: ["TNLListener"]

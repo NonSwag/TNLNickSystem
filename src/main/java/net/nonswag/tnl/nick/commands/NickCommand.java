@@ -2,7 +2,7 @@ package net.nonswag.tnl.nick.commands;
 
 import net.nonswag.tnl.core.api.command.CommandSource;
 import net.nonswag.tnl.core.api.command.Invocation;
-import net.nonswag.tnl.listener.TNLListener;
+import net.nonswag.tnl.listener.Listener;
 import net.nonswag.tnl.listener.api.command.TNLCommand;
 import net.nonswag.tnl.listener.api.command.exceptions.PlayerNotOnlineException;
 import net.nonswag.tnl.listener.api.player.TNLPlayer;
@@ -80,9 +80,9 @@ public class NickCommand extends TNLCommand {
         String[] args = invocation.arguments();
         if (args.length <= 1) {
             suggestions.add("reset");
-            for (TNLPlayer all : TNLListener.getOnlinePlayers()) suggestions.add(all.getName());
+            Listener.getOnlinePlayers().forEach(all -> suggestions.add(all.getName()));
         } else if (args[0].equalsIgnoreCase("reset")) {
-            for (TNLPlayer all : TNLListener.getOnlinePlayers()) suggestions.add(all.getName());
+            Listener.getOnlinePlayers().forEach(all -> suggestions.add(all.getName()));
         }
         return suggestions;
     }
